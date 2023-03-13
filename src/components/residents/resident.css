@@ -1,0 +1,23 @@
+div.resident{
+    background-color: 
+    #062226;
+    color:aliceblue;
+    
+}
+.cards{
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    width: 350px;
+    height: 600px;
+}
+article{
+    border: 1px solid white;
+}
+div img{
+    width: 300px;
+    height: 300px;
+}

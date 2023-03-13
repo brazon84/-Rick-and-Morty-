@@ -1,0 +1,43 @@
+*,
+::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: 
+    #062226;
+
+}
+
+.baner{
+    
+width: 100%;
+height: 400px;
+}
+.baner img{
+    width: 100%;
+    height: 100%;
+}
+div.search{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   
+    gap: 30px;
+    padding: 20px;
+}
+form.search1{
+    justify-content: center;
+    gap: 10px;
+}
+input{
+    border-radius: 8px;
+    padding: 5px;
+    color: aliceblue;
+    background: lightblue;
+}
+input:focus{
+    background: lightgreen;
+}
