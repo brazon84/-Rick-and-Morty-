@@ -10,20 +10,20 @@ const Location = ({ name, type, dimension, residents }) => {
       <section className="title d-flex justify-content-evenly align-items-center align-content-center">
         <ul className="shadow p-3 mb-10 bg-body-tertiary rounded">
           <li>
-            <p>
-              <h4>Type: </h4>
+            <p className="d-flex flex-column">
+              <span><b>Type: </b></span>
               {type}
             </p>
           </li>
           <li>
-          <p>
-            <h4>Dimension: </h4>
+          <p className="d-flex flex-column">
+            <span><b>Dimension: </b></span>
             {dimension}
           </p>
           </li>
           <li>
-          <p>
-            <h4>Population: </h4>
+          <p className="d-flex flex-column">
+            <span><b>Population: </b></span>
             {residents.length}
           </p>
           </li>

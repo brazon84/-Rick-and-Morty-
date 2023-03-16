@@ -9,10 +9,10 @@ import baner from "./assets/baner.png"
 
 const App = () => {
   const [LocalInfo, setLocalInfo] = useState(null); //useState es un hook que se esta inicando en null
-  const [idSearch, setIdSearch] = useState(" ");
+  const [idSearch, setIdSearch] = useState("");
 
-  const getIdRandom = () => getRandomNumber(1, 126); // realiza el dinamismo para generar numeros aleatoreos (me genera el numero de ID)
-
+  let getIdRandom = () => getRandomNumber(1, 126); // realiza el dinamismo para generar numeros aleatoreos (me genera el numero de ID)
+  
   const info = async (LocationId) => {
     const url = `https://rickandmortyapi.com/api/location/${LocationId}`; // con el getId trae un id diferente en cada llamado
     try {
@@ -23,24 +23,24 @@ const App = () => {
       console.log(error);
     }
   };
-
-  const ClearClick = () => {
-    setIdSearch("");}
-
   const idLocationChange = (e) => {
     const newValue = e.target.value;
 
     if (/^\d{0,3}$/.test(newValue)) setIdSearch(newValue);
+    
   };
 
   const onclikcSubmit = (e) => {
     e.preventDefault();
-
-    if (idSearch) info(idSearch);
-
-    else info(getIdRandom());
-
+  
+    if (idSearch) {
+      info(idSearch);
+      setIdSearch(""); // establece el valor de idSearch en una cadena vacía
+    } else {
+      info(getIdRandom());
+    }
   };
+  
 
   useEffect(() => {
     info(getIdRandom());
@@ -58,8 +58,7 @@ const App = () => {
     </div>
     <div className="search">
       <form className="search1 d-flex" 
-      onSubmit={onclikcSubmit}
-      onClick={ClearClick}>
+      onSubmit={onclikcSubmit} >
         <input
           className="form"
           type="search"
@@ -77,8 +76,7 @@ const App = () => {
         {LocalInfo &&
          
             <ListResidents residents={LocalInfo.residents}/>
-          }
-  
+          }    
     </div>
   );
         }
